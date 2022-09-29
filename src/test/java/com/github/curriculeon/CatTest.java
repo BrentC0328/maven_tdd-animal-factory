@@ -1,12 +1,12 @@
 package com.github.curriculeon;
 
+import com.github.curriculeon.animals.Animal;
 import com.github.curriculeon.animals.Cat;
 import com.github.curriculeon.animals.Mammal;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -80,6 +80,23 @@ public class CatTest {
         Integer catID = cat.getId();
         //Then
         Assert.assertEquals(testIDNumber, catID);
+    }
+
+    @Test
+    public void animalInheritanceTest(){
+        //Given
+        //When
+        Cat cat = new Cat(null,null,null);
+        //Then
+        Assert.assertTrue(cat instanceof Animal);
+    }
+    @Test
+    public void mammalInheritanceTest(){
+        //Given
+        //When
+        Cat cat = new Cat(null,null,null);
+        //Then
+        Assert.assertTrue(cat instanceof Mammal);
     }
 
     @Test
