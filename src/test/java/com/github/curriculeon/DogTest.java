@@ -38,20 +38,20 @@ public class DogTest {
     @Test
     public void dogConstructorTest(){
         //Given
-        String testName = "Dogster McDog";
-        Date testbirthDate = Date.from(Instant.now());
-        Integer testID = 69; //nice
-        Dog dog = new Dog(testName, testbirthDate, testID);
+        String expectedName = "Dogster McDog";
+        Date expectedbirthDate = Date.from(Instant.now());
+        Integer expectedID = 69; //nice
+        Dog dog = new Dog(expectedName, expectedbirthDate, expectedID);
 
         //When
-        String checkedName = dog.getName();
-        Date checkedDate = dog.getBirthDate();
-        Integer checkedID = dog.getId();
+        String actualName = dog.getName();
+        Date actualDate = dog.getBirthDate();
+        Integer actualID = dog.getId();
 
         //Then
-        Assert.assertEquals(testName, checkedName);
-        Assert.assertEquals(testbirthDate, checkedDate);
-        Assert.assertEquals(testID, checkedID);
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedbirthDate, actualDate);
+        Assert.assertEquals(expectedID, actualID);
     }
 
 
@@ -59,23 +59,23 @@ public class DogTest {
     public void dogSpeakTest() {
         //Given
         Dog dog = new Dog(null, null, null);
-        String theDogSays = "bark!";
+        String expectedSpeak = "bark!";
         //When
-        String whatHeSaid = dog.speak();
+        String actualSpeak = dog.speak();
         //Then
-        Assert.assertEquals(theDogSays, whatHeSaid);
+        Assert.assertEquals(expectedSpeak, actualSpeak);
     }
 
     @Test
     public void dogBirthDateTest() {
         //Given
         Dog dog = new Dog(null, null, null);
-        Date happyBirthday = Date.from(Instant.now());
+        Date expectedBirthDate = Date.from(Instant.now());
         //When
-        dog.setBirthDate(happyBirthday);
-        Date getTheBirthDate = dog.getBirthDate();
+        dog.setBirthDate(expectedBirthDate);
+        Date actualBirthDate = dog.getBirthDate();
         //Then
-        Assert.assertEquals(happyBirthday, getTheBirthDate);
+        Assert.assertEquals(expectedBirthDate, actualBirthDate);
 
     }
 
@@ -90,22 +90,22 @@ public class DogTest {
         Food food = new Food();
         dog.eat(food);
         testFood.add(food);
-        Integer eatenMeals = dog.getNumberOfMealsEaten();
-        Integer testMeals = testFood.size();
+        Integer actualMeals = dog.getNumberOfMealsEaten();
+        Integer expectedMeals = testFood.size();
 
         //Then
-        Assert.assertEquals(eatenMeals, testMeals);
+        Assert.assertEquals( expectedMeals, actualMeals);
     }
 
     @Test
     public void testDogID(){
         //Given
         Dog dog = new Dog(null, null, 23);
-        Integer testDogID = 23;
+        Integer expectedID = 23;
         //When
-        Integer checkedID = dog.getId();
+        Integer actualID = dog.getId();
         //Then
-        Assert.assertEquals(testDogID, checkedID);
+        Assert.assertEquals(expectedID, actualID);
 
     }
 

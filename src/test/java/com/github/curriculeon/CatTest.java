@@ -48,11 +48,11 @@ public class CatTest {
         //Given
         Cat cat = new Cat(null, null, null);
         //When
-        Date happyBirthday = Date.from(Instant.now());
-        cat.setBirthDate(happyBirthday);
+        Date expectedBirthday = Date.from(Instant.now());
+        cat.setBirthDate(expectedBirthday);
         //Then
-        Date catsBirthday = cat.getBirthDate();
-        Assert.assertEquals(catsBirthday, happyBirthday);
+        Date actualBirthday = cat.getBirthDate();
+        Assert.assertEquals(expectedBirthday,actualBirthday);
     }
     @Test
     public void testCatEat(){
@@ -64,22 +64,22 @@ public class CatTest {
         Food food = new Food();
         cat.eat(food);
         testFood.add(food);
-        Integer eatenMeals = cat.getNumberOfMealsEaten();
-        Integer testMeals = testFood.size();
+        Integer actualMealsEaten = cat.getNumberOfMealsEaten();
+        Integer expectedMeals = testFood.size();
 
         //Then
-        Assert.assertEquals(eatenMeals, testMeals);
+        Assert.assertEquals( expectedMeals, actualMealsEaten);
     }
 
     @Test
     public void catIDTest(){
         //Given
         Cat cat = new Cat(null, null, 16);
-        Integer testIDNumber = 16;
+        Integer expectedIDNumber = 16;
         //When
-        Integer catID = cat.getId();
+        Integer actualCatID = cat.getId();
         //Then
-        Assert.assertEquals(testIDNumber, catID);
+        Assert.assertEquals(expectedIDNumber, actualCatID);
     }
 
     @Test

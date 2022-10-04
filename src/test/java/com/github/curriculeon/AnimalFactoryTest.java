@@ -20,29 +20,29 @@ public class AnimalFactoryTest {
     @Test
     public void createDogTest(){
         //Given
-        String testName = "Roody Poo McGoo";
-        Date testBirthDate = Date.from(Instant.ofEpochMilli(2020-02-22));
+        String expectedName = "Roody Poo McGoo";
+        Date expectedBirthDate = Date.from(Instant.ofEpochMilli(2020-02-22));
         //When
-        Dog dog = AnimalFactory.createDog(testName, testBirthDate);
-        String checkedDogName = dog.getName();
-        Date checkedBirthDate = dog.getBirthDate();
+        Dog dog = AnimalFactory.createDog(expectedName, expectedBirthDate);
+        String actualDogName = dog.getName();
+        Date actualBirthDate = dog.getBirthDate();
         //Then
-        Assert.assertEquals(testName, checkedDogName);
-        Assert.assertEquals(testBirthDate, checkedBirthDate);
+        Assert.assertEquals(expectedName, actualDogName);
+        Assert.assertEquals(expectedBirthDate, actualBirthDate);
     }
 
     @Test
     public void createCatTest(){
         //Given
-        String testName = "Mr. Bigglesworth";
-        Date testBirthDate = Date.from(Instant.ofEpochMilli(2020-02-22));
+        String expectedName = "Mr. Bigglesworth";
+        Date expectedBirthDate = Date.from(Instant.ofEpochMilli(2020-02-22));
         //When
-        Cat cat = AnimalFactory.createCat(testName, testBirthDate);
-        String checkedCatName = cat.getName();
-        Date checkedBirthDate = cat.getBirthDate();
+        Cat cat = AnimalFactory.createCat(expectedName, expectedBirthDate);
+        String actualCatName = cat.getName();
+        Date actualBirthDate = cat.getBirthDate();
         //Then
-        Assert.assertEquals(testName, checkedCatName);
-        Assert.assertEquals(testBirthDate, checkedBirthDate);
+        Assert.assertEquals(expectedName, actualCatName);
+        Assert.assertEquals(expectedBirthDate, actualBirthDate);
     }
 
 }
